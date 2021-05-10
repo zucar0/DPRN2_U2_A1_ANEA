@@ -13,5 +13,12 @@ class ReservaDestinoNormal:Reservas{
             this.destinoElegido=destinoElegido;
             this.paqueteDeViaje=paqueteDeViaje;
             this.descuento=descuento;
-        }
+    }
+
+    public void calculoDestinoNormal()
+    {
+        //Método heredado de la clase padre
+        Informacion();
+
+    }
 }

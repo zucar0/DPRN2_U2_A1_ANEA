@@ -12,5 +12,11 @@ class ReservaDestinoExtremo:Reservas{
             this.destinoElegido=destinoElegido;
             this.paqueteDeViaje=paqueteDeViaje;
             this.cargoExtra=cargoExtra;
-        }
+    }
+    public void calculoDestinoExtremo()
+    {
+        //Método heredado de la clase padre
+        Informacion();
+
+    }
 }
