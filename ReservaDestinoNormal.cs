@@ -15,10 +15,20 @@ class ReservaDestinoNormal:Reservas{
             this.descuento=descuento;
     }
 
-    public void calculoDestinoNormal()
+    public void planearViajeNormal()
     {
         //Método heredado de la clase padre
         Informacion();
-
     }
+    public void obtenerPrecioNormal()
+    {
+        //Método heredado de la clase padre
+        Informacion();
+    }
+    public void limpiarPlaneacionNormal()
+    {
+        //Método heredado de la clase padre
+        Informacion();
+    }
+
 }

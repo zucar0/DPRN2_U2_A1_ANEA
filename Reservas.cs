@@ -5,7 +5,7 @@ public class Reservas{
 
     }
     //Declaración de datos miembro.
-    protected string destinoTuristico;
+    protected string destinoTuristico="1.Tatooine \n 2. Hoth \n 3.Alderaan \n 4. Yavin IV \n" ;
     protected int numeroDePersonas;
     protected string tiempoDeViaje="3 días y 4 noches (terrestres). *Sin opción de modificación.";
 
