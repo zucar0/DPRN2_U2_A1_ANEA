@@ -39,12 +39,23 @@ namespace DPRN2_U2_A1_ANEA
                             System.Console.WriteLine("1.-Bronce\n2.-Plata\n3.-Oro\nElige el paquete deseado.");
                             var paquete = Console.ReadLine();
                             int package = int.Parse(paquete);
-                            
+                            System.Console.WriteLine("¿Cuántas personas viajarán?");
+                            var personas = Console.ReadLine();
+                            int person = int.Parse(personas);
+                            double precioporpersona = 18700.00;
+                            ReservaDestinoNormal reservanormal = new ReservaDestinoNormal(2,person,precioporpersona,2,package,0.10);
+                            reservanormal.obtenerPrecioNormal();
                         }else if(destine==3){
                             System.Console.WriteLine("Los paquetes para Yavin son los siguientes: ");
                             System.Console.WriteLine("1.-Bronce\n2.-Plata\n3.-Oro\nElige el paquete deseado.");
                             var paquete = Console.ReadLine();
                             int package = int.Parse(paquete);
+                            System.Console.WriteLine("¿Cuántas personas viajarán?");
+                            var personas = Console.ReadLine();
+                            int person = int.Parse(personas);
+                            double precioporpersona = 7900.00;
+                            ReservaDestinoNormal reservanormal = new ReservaDestinoNormal(3,person,precioporpersona,3,package,0.10);
+                            reservanormal.obtenerPrecioNormal();
                         }else if(destine==4){
                             System.Console.WriteLine("Los paquetes para Hoth son los siguientes: ");
                             System.Console.WriteLine("1.-Bronce\n2.-Plata\n3.-Oro\nElige el paquete deseado.");
@@ -63,6 +74,28 @@ namespace DPRN2_U2_A1_ANEA
                             break;
                         case 2 when (eleccion==2):
                         System.Console.WriteLine("Haz elegido obtener un precio");
+                        System.Console.WriteLine("¿Cuántas personas viajarán?");
+                        var personasparaprecio = Console.ReadLine();
+                        int persontoprice = int.Parse(personasparaprecio);
+                        System.Console.WriteLine("¿Hacia qué destino?\n1.-Tatooine\n2.-Alderaan\n3.-Yavin IV\n4.-Hoth");
+                        var destinoparaprecio = Console.ReadLine();
+                        int destinetoprice = int.Parse(destinoparaprecio);
+                        if(destinetoprice==1){
+                            ReservaDestinoExtremo reservadetinosextremosimple = new ReservaDestinoExtremo(1,persontoprice);
+                            reservadetinosextremosimple.obtenerPrecioExtremoSimple();
+                        }
+                        if(destinetoprice==2){
+                            ReservaDestinoNormal reservadestinonormalsimple = new ReservaDestinoNormal(2,persontoprice);
+                            reservadestinonormalsimple.obtenerPrecioNormalSimple();
+                        }
+                        if(destinetoprice==3){
+                            ReservaDestinoNormal reservadestinonormalsimple = new ReservaDestinoNormal(3,persontoprice);
+                            reservadestinonormalsimple.obtenerPrecioNormalSimple();
+                        }
+                        if(destinetoprice==4){
+                            ReservaDestinoExtremo reservadetinosextremosimple = new ReservaDestinoExtremo(4,persontoprice);
+                            reservadetinosextremosimple.obtenerPrecioExtremoSimple();
+                        }
                             break;
                         case 3 when (eleccion==3):
                         System.Console.WriteLine("Has limpiado los valores de la planeación");

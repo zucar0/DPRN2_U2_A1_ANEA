@@ -14,10 +14,23 @@ class ReservaDestinoExtremo:Reservas{
             this.paqueteDeViaje=paqueteDeViaje;
             this.cargoExtra=cargoExtra;
     }
-    public void planearViajeExtremo()
+    public ReservaDestinoExtremo(int destinoTuristico, int numeroDePersonas):base(destinoTuristico,numeroDePersonas)
+    {
+
+    }
+    public void obtenerPrecioExtremoSimple()
     {
         //Método heredado de la clase padre
         Informacion();
+        if(destinoTuristico==1){
+            double subtotal = 9600 * numeroDePersonas;
+            System.Console.WriteLine("El precio del viaje a Tatooine es de: " + subtotal);
+            System.Console.WriteLine("El cálculo no incluye cargos extra ni descuentos. Para más detalles planifica un viaje en la opción 1 del menú.");
+        }else if(destinoTuristico==4){
+            double subtotal = 8790 * numeroDePersonas;
+            System.Console.WriteLine("El precio del viaje a Hoth es de: " + subtotal);
+            System.Console.WriteLine("El cálculo no incluye cargos extra ni descuentos. Para más detalles planifica un viaje en la opción 1 del menú.");
+        }
     }
     public void obtenerPrecioExtremo()
     {
