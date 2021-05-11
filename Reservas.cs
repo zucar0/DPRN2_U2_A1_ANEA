@@ -5,20 +5,61 @@ public class Reservas{
 
     }
     //Declaración de datos miembro.
-    protected string destinoTuristico="1.Tatooine \n 2. Hoth \n 3.Alderaan \n 4. Yavin IV \n" ;
+    protected int destinoTuristico;
     protected int numeroDePersonas;
-    protected string tiempoDeViaje="3 días y 4 noches (terrestres). *Sin opción de modificación.";
 
     
     //Método Reservas con parámetros
-    public Reservas(string destinoTuristico, int numeroDePersonas, string tiempoDeViaje){
+    public Reservas(int destinoTuristico, int numeroDePersonas){
         this.destinoTuristico=destinoTuristico;
         this.numeroDePersonas=numeroDePersonas;
-        this.tiempoDeViaje=tiempoDeViaje;
     }
     public void Informacion(){
-        System.Console.WriteLine("Destino turístico: "+ destinoTuristico);
-        System.Console.WriteLine("Número de persona: "+ numeroDePersonas);
-        System.Console.WriteLine("Tiempo de viaje: "+ tiempoDeViaje);
+        if(destinoTuristico==1)
+        {
+            System.Console.WriteLine("Destino turístico: "+ destinoTuristico +".- Tatooine.");
+        }else if(destinoTuristico==2)
+        {
+            System.Console.WriteLine("Destino turístico: "+ destinoTuristico +".- Alderaan.");
+        }
+        else if(destinoTuristico==3)
+        {
+            System.Console.WriteLine("Destino turístico: "+ destinoTuristico +".- Yavin IV.");
+        }
+        else if(destinoTuristico==4)
+        {
+            System.Console.WriteLine("Destino turístico: "+ destinoTuristico +".- Hoth.");
+        }
+        System.Console.WriteLine("Número de personas: "+ numeroDePersonas);
     }
+
+     //Interfaz para la cantidad de personas
+    public int Personas{
+        get{
+            return numeroDePersonas;
+        }
+        set{
+            if(value <= 0){
+                numeroDePersonas=0;
+            }
+            else{
+                numeroDePersonas=value;
+            }
+        }
+    }
+    //Interfaz para el destino turístico
+    public int Destino{
+        get{
+            return destinoTuristico;
+        }
+        set{ 
+            destinoTuristico = value;
+        }
+    }
+    //Destructor
+    ~Reservas() {
+        destinoTuristico=0; 
+        numeroDePersonas=0;
+        // Console.Write("Este es el destructor ejecutándose para destruir el objeto de la clase Factura");
+    } 
 }

@@ -1,3 +1,4 @@
+using System;
 class ReservaDestinoNormal:Reservas{
     //Declaración de datos miembros    
     private double precioDelViaje=0.0;
@@ -6,8 +7,8 @@ class ReservaDestinoNormal:Reservas{
     // private double cargoExtra = 0.05;
     protected double descuento = 0.10;
 
-    public ReservaDestinoNormal(string destinoTuristico, int numeroDePersonas, string tiempoDeViaje, double precioDelViaje, int destinoElegido,
-    int paqueteDeViaje, double descuento):base(destinoTuristico, numeroDePersonas, tiempoDeViaje)
+    public ReservaDestinoNormal(int destinoTuristico, int numeroDePersonas, double precioDelViaje, int destinoElegido,
+    int paqueteDeViaje, double descuento):base(destinoTuristico, numeroDePersonas)
         {
             this.precioDelViaje=precioDelViaje;
             this.destinoElegido=destinoElegido;
@@ -30,5 +31,14 @@ class ReservaDestinoNormal:Reservas{
         //Método heredado de la clase padre
         Informacion();
     }
+    ~ReservaDestinoNormal() {
+        destinoTuristico=0; 
+        numeroDePersonas=0;
+        precioDelViaje=0.00;
+        destinoElegido=0;
+        paqueteDeViaje=0;
+        descuento=0.10;
+        Console.Write("Los valores han sido reseteados");
+    } 
 
 }
